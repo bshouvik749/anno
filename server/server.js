@@ -8,9 +8,10 @@ const app = express();
 // Middleware
 app.use(cors({
   origin: [
-    ' https://annono.netlify.app',
+    'http://localhost:5173',
     'https://admin-anno.netlify.app',
-    'https://anno-6dyc.onrender.com' // (optional: allow backend self-origin for health checks)
+    'https://annono.netlify.app', // <-- add this line
+    'https://anno-6dyc.onrender.com'
   ],
   credentials: true
 }));
@@ -81,4 +82,5 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 
