@@ -6,7 +6,13 @@ const path = require('path');
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: [
+    'https://admin-anno.netlify.app',
+    'https://anno-6dyc.onrender.com' // (optional: allow backend self-origin for health checks)
+  ],
+  credentials: true
+}));
 app.use(express.json());
 app.use(express.static('public'));
 
